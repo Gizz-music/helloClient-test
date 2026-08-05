@@ -5,6 +5,8 @@ type SidebarItemProps = {
   as?: ElementType;
   isActive?: boolean;
   children: ReactNode;
+  onClick?: () => void;
+  [key: string]: any;
 };
 
 //Универсальный элемент меню. Принимает `isActive` снаружи и прокидывает его в атрибут data-active.
