@@ -35,9 +35,8 @@ export const AppSidebar = () => {
       location.pathname as (typeof CLIENT_SUB_ROUTES)[number],
     ) || location.pathname === "/clients";
 
-  // В широком режиме держим список открытым на дочернем роуте
-  // при переходе на другие значки forceOpen=false и список закрывается
-  const forceOpenSubmenu = isClientsActive && !isCollapsed;
+  const isDesktop = window.innerWidth >= 768;
+  const forceOpenSubmenu = isClientsActive && !isCollapsed && isDesktop;
 
   return (
     <SidebarContent className={sidebarContainerClassName}>
