@@ -5,6 +5,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  base: "/helloClient-test/",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
