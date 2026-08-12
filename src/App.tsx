@@ -1,19 +1,16 @@
 import { AppSidebar } from "@/widgets/app-sidebar";
-import { Sidebar, useSidebarContext } from "@/shared/ui/sidebar";
+import { RouterMenu, useRouterMenuContext } from "@/shared/ui/router-menu";
 
 export const App = () => {
   return (
-    // Провайдер контекста сайдбара. Задает начальное свернутое состояние.
-    // Внутри себя содержит контекст провайдер
-    <Sidebar defaultCollapsed={true}>
+    <RouterMenu defaultCollapsed>
       <AppShell />
-    </Sidebar>
+    </RouterMenu>
   );
 };
 
-//Layout приложения
 const AppShell = () => {
-  const { isCollapsed } = useSidebarContext();
+  const { isCollapsed } = useRouterMenuContext();
 
   return (
     <div className="flex flex-col min-h-screen md:flex-row">

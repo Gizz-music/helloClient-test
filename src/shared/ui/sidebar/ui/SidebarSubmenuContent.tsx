@@ -7,8 +7,6 @@ interface SidebarSubmenuContentProps {
   className?: string;
 }
 
-//Контейнер для вложенных элементов sub items. Рендерится только тогда, когда подменю открыто.
-
 export const SidebarSubmenuContent = ({
   children,
   className,

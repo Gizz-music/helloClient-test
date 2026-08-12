@@ -26,7 +26,6 @@ export const SidebarSubmenu = ({
     return () => mq.removeEventListener("change", sync);
   }, []);
 
-  // Синхронизация с роутом: открыт на дочернем, закрывается при уходе
   useEffect(() => {
     setIsOpen(forceOpen);
   }, [forceOpen]);

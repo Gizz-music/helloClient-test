@@ -7,12 +7,12 @@ interface SidebarContentProps {
   className?: string;
 }
 
-//Контейнер панели
 export const SidebarContent = ({
   children,
   className,
 }: SidebarContentProps) => {
   const { isCollapsed } = useSidebarContext();
+
   return (
     <aside data-collapsed={isCollapsed} className={className}>
       {children}

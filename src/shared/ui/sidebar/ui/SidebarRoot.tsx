@@ -7,8 +7,6 @@ interface SidebarRootProps {
   defaultCollapsed?: boolean;
 }
 
-//Корневой компонент, хранящий состояние свернутости сайдбара.
-
 export const SidebarRoot = ({
   children,
   defaultCollapsed = true,

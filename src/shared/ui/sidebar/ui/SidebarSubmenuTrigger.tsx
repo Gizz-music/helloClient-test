@@ -3,8 +3,7 @@ import { ComponentPropsWithoutRef } from "react";
 import { useSubmenuContext } from "@/shared/ui/sidebar/model/SubmenuContext.tsx";
 import { SidebarItem } from "./SidebarItem";
 
-// Кнопка со свойством isActive и стандартными children
-type SubmenuTriggerProps = ComponentPropsWithoutRef<"button"> & {
+type SidebarSubmenuTriggerProps = ComponentPropsWithoutRef<"button"> & {
   isActive?: boolean;
 };
 
@@ -12,17 +11,19 @@ export const SidebarSubmenuTrigger = ({
   isActive,
   onClick,
   children,
+  className,
   ...props
-}: SubmenuTriggerProps) => {
-  const { isOpen, toggle } = useSubmenuContext();
+}: SidebarSubmenuTriggerProps) => {
+  const { isOpen } = useSubmenuContext();
 
   return (
     <SidebarItem
-      as="button" // Передаем жестко строку, если SidebarItem ее принимает
+      as="button"
       isActive={isActive}
-      onClick={toggle}
+      onClick={onClick}
       aria-haspopup="true"
       aria-expanded={isOpen}
+      className={className}
       {...props}
     >
       {children}
