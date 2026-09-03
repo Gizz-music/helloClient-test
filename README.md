@@ -1,32 +1,46 @@
-# React + TypeScript + Vite
+# HelloClient — Sidebar
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Тестовый адаптивный сайдбар для десктопного и мобильного приложения. Реализована навигация с пунктами меню, группами и вложенными подменю; на узких экранах меню сворачивается и открывается по кнопке.
 
-Currently, two official plugins are available:
+Проект выполнен по методологии [Feature-Sliced Design (FSD)](https://feature-sliced.design/) с помощью **Cursor AI**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Стек
 
-## React Compiler
+- **React 19** + **TypeScript**
+- **Vite** — сборка и dev-сервер
+- **Tailwind CSS 4** — стили
+- **React Router** — маршрутизация
+- **Lucide React** — иконки
+- **Oxlint** / **Prettier** — линтинг и форматирование
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Структура (FSD)
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+src/
+├── shared/ui/          # переиспользуемые UI-примитивы
+│   ├── sidebar/        # корневой сайдбар, контекст, submenu
+│   ├── router-menu/    # меню, привязанное к маршрутам
+│   └── tooltip/
+└── widgets/
+    └── app-sidebar/    # композиция меню приложения
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Запуск
+
+```bash
+npm install
+npm run dev
+```
+
+Сборка и превью:
+
+```bash
+npm run build
+npm run preview
+```
+
+Деплой на GitHub Pages:
+
+```bash
+npm run deploy
+```
